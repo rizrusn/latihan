@@ -288,6 +288,21 @@ public class HomeController extends Controller {
         return ok("Cookie Modification Example");
     }
 
+    public Result cthrow() throws Exception {
+//        int x=5,y=0,z;
+//        try {
+//            z=x/y;
+//        }
+//        catch (ArithmeticException te){
+//            throw te;
+//        }
+        int x=5,y=5;
+        if (x == y){
+            throw new Exception("x dan y tidak boleh sama");
+        }
+        return ok("throw dilewati");
+    }
+
 //    public Promise<Result> asyncExample() {
 //        ActorRef fileReaderActor = Akka.system().actorOf(Props.create(FileReaderActor.class));
 //        FileReaderProtocol words = new FileReaderProtocol("/usr/share/dict/words");
