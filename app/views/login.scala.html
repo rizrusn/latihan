@@ -1,0 +1,19 @@
+@(loginForm: Form[controllers.HomeController.Login])
+
+@main(title = "Login") {
+@if(flash.containsKey("success")) {
+    @flash.get("success")
+}
+@if(loginForm.hasGlobalErrors) {
+<ul>
+    @for(error <- loginForm.globalErrors) {
+    <li>@error.message</li>
+    }
+</ul>
+}
+@helper.form(action = routes.HomeController.login()) {
+@helper.inputText(loginForm("username"))
+@helper.inputText(loginForm("password"))
+<input type="submit" value="Login">
+}
+}

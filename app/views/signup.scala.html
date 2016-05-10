@@ -1,0 +1,21 @@
+
+@(userForm: Form[models.User])
+
+@main(title = "Signup") {
+@if(flash.containsKey("success")) {
+    @flash.get("success")
+}
+@if(userForm.hasGlobalErrors) {
+    <ul>
+        @for(error <- userForm.globalErrors) {
+            <li>@error.message</li>
+        }
+    </ul>
+}
+@helper.form(action = routes.HomeController.submit()) {
+    @helper.inputText(userForm("name"))
+    @helper.inputText(userForm("username"))
+    @helper.inputText(userForm("password"))
+    <input type="submit">
+}
+}

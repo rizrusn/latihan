@@ -1,0 +1,30 @@
+
+@(message: String, tasks: List[Task])
+
+
+
+@main("Welcome to Task manager") {
+
+@if(flash.containsKey("success")) {
+@flash.get("success")
+} else {
+Welcome!
+}
+
+</br>
+@for(task <- tasks){
+@task.id
+@task.name
+@task.done &nbsp <a href="@routes.HomeController.updateDone(task.id)">Update Done</a> &nbsp <a href="@routes.HomeController.deleteTask(task.id)">Delete</a>
+</br>
+}
+
+<form action="@routes.HomeController.toForm()" method="post">
+    <button>Add Task</button>
+</form>
+
+</br>
+</br>
+<a href="@routes.HomeController.toSignup()">To Signup</a>&nbsp <a href="@routes.HomeController.toLogin()">Login</a>
+
+}

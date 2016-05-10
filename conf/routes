@@ -1,0 +1,59 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# ~~~~
+
+# An example controller showing a sample home page
+GET     /                           controllers.HomeController.index
+
+GET 	/form						controllers.HomeController.toForm
+
+POST	/task						controllers.HomeController.addTask
+
+GET     /tasks					    controllers.HomeController.getTask
+
+GET     /update/:id                 controllers.HomeController.updateDone(id: Long)
+
+GET     /delete/:id                 controllers.HomeController.deleteTask(id: Long)
+
+POST	/json/task					controllers.HomeController.postTask
+
+
+GET     /user/new				    controllers.HomeController.toSignup()
+POST    /user					    controllers.HomeController.submit()
+GET     /users					    controllers.HomeController.getUser
+
+GET     /login				        controllers.HomeController.toLogin()
+POST    /auth				        controllers.HomeController.login()
+
+GET     /testws				        controllers.HomeController.testWS()
+
+POST    /pass/:name                 controllers.HomeController.cekPassword(name: String)
+
+GET     /uploadForm                 controllers.HomeController.uploadForm
+POST    /upload                     controllers.HomeController.handleUpload
+
+GET     /header_example             controllers.HomeController.modifyHeaders
+GET     /cookie_example             controllers.HomeController.modifyCookies
+
+#GET     /async_example              controllers.HomeController.asyncExample
+
+GET     /client/get_todos           controllers.WebClient.getTodos
+
+GET     /twitter/homeTimeline       controllers.Twitter.homeTimeline()
+GET     /twitter/auth               controllers.Twitter.auth()
+
+#GET     /data	                    controllers.Data.show()
+#POST    /data/post	                controllers.Data.post()
+
+
+
+
+
+
+# An example controller showing how to use dependency injection
+GET     /count                      controllers.CountController.count
+# An example controller showing how to write asynchronous code
+GET     /message                    controllers.AsyncController.message
+
+# Map static resources from the /public folder to the /assets URL path
+GET     /assets/*file               controllers.Assets.versioned(path="/public", file: Asset)

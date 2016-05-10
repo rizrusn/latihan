@@ -1,0 +1,16 @@
+@(session: String)
+
+@main("Form Task") {
+
+task terakhir: @session
+<br>
+
+<form action="@routes.HomeController.addTask()" method="post">
+    <input type="number" name="id" required="true" min="1" />ID</br>
+    <input type="text" name="name" required="true"/>Name</br>
+    <input type="radio" name="done" value="0" checked> Undone<br>
+  	<input type="radio" name="done" value="1"> Done<br>
+    <button>Add Task</button>
+</form>
+
+}
