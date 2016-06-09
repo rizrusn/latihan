@@ -42,6 +42,8 @@ GET     /client/get_todos           controllers.WebClient.getTodos
 GET     /twitter/homeTimeline       controllers.Twitter.homeTimeline()
 GET     /twitter/auth               controllers.Twitter.auth()
 
+GET
+
 GET     /cthrow                      controllers.HomeController.cthrow()
 
 #GET     /data	                    controllers.Data.show()
