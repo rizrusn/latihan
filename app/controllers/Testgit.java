@@ -5,4 +5,6 @@ package controllers;
  */
 public class Testgit {
     // this is in branch latihan1
+
+    // this is in branch latihangit
 }
