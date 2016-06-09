@@ -5,7 +5,7 @@
 # An example controller showing a sample home page
 GET     /                           controllers.HomeController.index
 
-GET 	/form						controllers.HomeController.toForm
+POST 	/form						controllers.HomeController.toForm
 
 POST	/task						controllers.HomeController.addTask
 
@@ -41,6 +41,10 @@ GET     /client/get_todos           controllers.WebClient.getTodos
 
 GET     /twitter/homeTimeline       controllers.Twitter.homeTimeline()
 GET     /twitter/auth               controllers.Twitter.auth()
+
+GET
+
+GET     /cthrow                      controllers.HomeController.cthrow()
 
 #GET     /data	                    controllers.Data.show()
 #POST    /data/post	                controllers.Data.post()

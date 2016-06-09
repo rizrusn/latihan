@@ -3,24 +3,24 @@
 
 # --- !Ups
 
-create table task (
+create table Task (
   id                        bigint not null,
   name                      varchar(255),
   done                      boolean,
   due_date                  timestamp,
-  constraint pk_task primary key (id))
+  constraint pk_Task primary key (id))
 ;
 
-create table user (
+create table User (
   username                  varchar(255) not null,
   name                      varchar(255),
   password                  varchar(255),
-  constraint pk_user primary key (username))
+  constraint pk_User primary key (username))
 ;
 
-create sequence task_seq;
+create sequence Task_seq;
 
-create sequence user_seq;
+create sequence User_seq;
 
 
 
@@ -29,13 +29,13 @@ create sequence user_seq;
 
 SET REFERENTIAL_INTEGRITY FALSE;
 
-drop table if exists task;
+drop table if exists Task;
 
-drop table if exists user;
+drop table if exists User;
 
 SET REFERENTIAL_INTEGRITY TRUE;
 
-drop sequence if exists task_seq;
+drop sequence if exists Task_seq;
 
-drop sequence if exists user_seq;
+drop sequence if exists User_seq;
 
